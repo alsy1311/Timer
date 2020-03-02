@@ -17,6 +17,7 @@ public:
 	void stop() {
 		auto end = clock_t::now();
 		std::cout << std::chrono::duration_cast <std::chrono::milliseconds>
+
 			(end - begin).count() << std::endl;
 
 	}
