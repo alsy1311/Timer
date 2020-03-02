@@ -1,13 +1,16 @@
 #include<iostream>
 #include<chrono>
+#include<windows.h>
 class Timer {
 	using clock_t = std::chrono::steady_clock;
 	using timepoint_t = clock_t::time_point;
 private:
 	timepoint_t begin;
 public:
-	Timer() : begin()
-	{}
+	Timer()
+	{
+		start();
+	}
 	~Timer() noexcept
 	{
 	}
@@ -27,6 +30,7 @@ int main()
 {
 	Timer timer = Timer();
 	std::cout << "Hello, World!" << std::endl;
+	Sleep(10);
 	timer.stop();
 	timer.start();
 	timer.stop();
